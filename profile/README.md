@@ -81,5 +81,3 @@ Where Knara prevents mistakes through opinionated enforcement, Treiben empowers 
 ## License
 
 Apache-2.0
-
-Built for teams tired of magic strings and release bottlenecks.
