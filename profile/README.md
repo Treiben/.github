@@ -1,36 +1,22 @@
 # Treiben
 
-**Type-safe feature flags that empower product owners**
+**Type-safe feature flags**
 
-*Treiben* (German: to propel, to drive) - Decouple deployment from release. Let developers deploy, let POs control when features go live.
+Treiben provides feature flag libraries that separate code deployment from feature releases. Developers define flags as strongly-typed classes, product owners configure release timing and targeting through a management interface.
 
 [Propel.FeatureFlags](https://github.com/Treiben/Propel.FeatureFlags) • [Dashboard](https://github.com/Treiben/Propel.FeatureFlags.Dashboard)
 
 ---
 
-## The Problem
+## Overview
 
-**Magic strings everywhere.** Config files full of cryptic strings nobody understands. Is `"new-checkout"` a feature flag? A business rule? Who knows? One typo and features break silently in production.
+Treiben (German: to propel, to drive) is a feature flag system designed around two core principles:
 
-**Developers control releases.** Product owners want to schedule a Black Friday launch? They need to file a ticket and wait for a developer to change a config file. Want to roll out gradually to 10% of users? Another ticket. Different targeting rules? More developer work.
+**Type safety**: Feature flags are defined as classes in code, not strings in configuration files. This provides compile-time validation, IDE support for navigation and refactoring, and explicit visibility into what flags exist and where they're used.
 
-**Config files become junkyards.** Years of accumulated strings with unknown purposes. Teams are afraid to delete anything because nobody knows what's still in use or where it's referenced.
+**Separation of concerns**: Developers define which features exist and deploy code. Product owners control when and how features are released - scheduling, targeting, gradual rollouts - without requiring code changes or developer involvement.
 
-**Continuous Deployment couples to Continuous Release.** Every code deployment means every feature goes live immediately, or teams resort to complex branching strategies and delayed deployments to control release timing.
-
----
-
-## The Solution
-
-Treiben separates deployment from release management.
-
-**Developers define feature flags as type-safe classes** in code. No more magic strings scattered across config files. Compiler validates everything. Find-All-References shows exact usage. When you're done with a flag, delete the class and the compiler tells you everywhere it was used.
-
-**Product owners control releases independently** through a management dashboard. Schedule releases for specific dates. Set up time windows for business hours only. Target specific users or tenants. Roll out gradually to percentages. Configure complex targeting rules. All without touching code or filing tickets.
-
-**Clean codebases.** Explicit flags in code, not ambiguous strings in config. Everyone knows what's a feature flag versus permanent business configuration. Cleanup is trivial - delete the class, fix compiler errors, done.
-
-**True continuous delivery.** Deploy code whenever you want, disabled by default. Product owners decide when features go live, completely independently from deployment cycles.
+This approach enables true continuous deployment: code can be deployed at any time with features disabled by default, while release timing is managed independently through configuration.
 
 ---
 
@@ -39,19 +25,31 @@ Treiben separates deployment from release management.
 ### [Propel.FeatureFlags](https://github.com/Treiben/Propel.FeatureFlags)
 Core library for .NET applications (.NET Standard 2.0+, .NET Framework 4.6.1+, .NET Core, .NET 5+)
 
-Type-safe feature flag library with support for PostgreSQL, SQL Server, Redis caching, scheduled releases, time windows, user/tenant targeting, percentage rollouts, and custom targeting rules.
+Feature flag library with PostgreSQL and SQL Server persistence, Redis caching, and support for scheduled releases, time windows, user/tenant targeting, percentage rollouts, and custom targeting rules.
 
-**Status:** Beta - Available on NuGet
+**Status:** v1.0.0-beta.1 - Available on NuGet
 
 ### [Propel Dashboard](https://github.com/Treiben/Propel.FeatureFlags.Dashboard)
-Web interface for product owners *(in development)*
+Management interface for feature flags *(in development)*
 
-Manage releases without developer involvement - configure schedules, targeting, rollouts, and monitor feature flag usage across all applications.
+Web application for configuring flag behavior - schedules, targeting rules, rollout percentages - and monitoring flag usage across applications.
 
 ### Propel Release
-Release management layer *(planned)*
+Release orchestration layer *(planned)*
 
-Advanced release orchestration with metrics, approval workflows, and cross-application release coordination for enterprise deployments.
+Advanced release management with metrics, approval workflows, and cross-application coordination for enterprise environments.
+
+---
+
+## Architecture
+
+**Auto-deployment**: Flags defined in code automatically register in the database on application startup. No separate deployment or migration steps required.
+
+**Default-off pattern**: New flags start disabled by default. Code deploys safely, product owners enable features when ready.
+
+**Evaluation modes**: Simple on/off toggles, scheduled activation, operational time windows, user/tenant targeting, percentage-based rollouts, and custom rule-based targeting.
+
+**Caching**: In-memory and Redis distributed caching to minimize database queries during flag evaluation.
 
 ---
 
@@ -59,22 +57,22 @@ Advanced release orchestration with metrics, approval workflows, and cross-appli
 
 **Treiben** follows a multilingual naming philosophy:
 
-- **Treiben** (German) - To propel, to drive. The force that moves features forward.
-- **Propel** - The product name and code namespace, familiar to developers.
-- **Knara** (Armenian) - Lyre. Sister libraries with a different focus.
+- **Treiben** (German) - Organization name. To propel, to drive forward.
+- **Propel** - Product name and code namespace.
+- **Knara** (Armenian) - Sister libraries focused on compile-time safety.
 
-The sailboat icon represents controlled momentum. Like wind propelling a sailboat forward, feature flags drive releases with precision - developers steer the direction, product owners control the speed.
+The sailboat icon represents controlled momentum - like wind propelling a sailboat, feature flags drive features forward with precision and control.
 
 ---
 
 ## Related Projects
 
-Sister libraries under the [Knara](https://github.com/tasriyan) brand focus on compile-time safety and preventing common enterprise mistakes:
+Sister libraries under the [Knara](https://github.com/tasriyan) organization focus on preventing common enterprise bugs through compile-time enforcement:
 
-- **[Knara.MultiTenant.IsolationEnforcer](https://github.com/tasriyan/Knara.MultiTenant.IsolationEnforcer)** - Roslyn analyzers that prevent tenant data leaks with compilation errors
+- **[Knara.MultiTenant.IsolationEnforcer](https://github.com/tasriyan/Knara.MultiTenant.IsolationEnforcer)** - Roslyn analyzers that prevent cross-tenant data leaks
 - **[Knara.UtcStrict](https://github.com/tasriyan/Knara.UtcStrict)** - Enforces UTC-only DateTime handling to eliminate timezone bugs
 
-Where Knara prevents mistakes through opinionated enforcement, Treiben empowers teams through flexibility and autonomy.
+Where Knara prevents mistakes through enforcement, Treiben enables flexibility through separation of concerns.
 
 ---
 
