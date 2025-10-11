@@ -34,10 +34,10 @@ Management interface for feature flags *(in development)*
 
 Web application for configuring flag behavior - schedules, targeting rules, rollout percentages - and monitoring flag usage across applications.
 
-### Propel Release
-Release orchestration layer *(planned)*
+### [Propel CLI](https://github.com/Treiben/propel-cli)
+Database migrations and limited management interface for feature flags
 
-Advanced release management with metrics, approval workflows, and cross-application coordination for enterprise environments.
+**Status:** v1.1.1-beta.1 - Available on NuGet
 
 ---
 
