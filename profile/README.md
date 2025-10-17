@@ -1,5 +1,3 @@
-# Propel
-
 **Type-safe feature flags**
 
 Propel provides feature flag libraries that separate code deployment from feature releases. Developers define flags as strongly-typed classes, product owners configure release timing and targeting through a management interface.
