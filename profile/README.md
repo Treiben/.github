@@ -4,7 +4,7 @@
 
 Treiben provides feature flag libraries that separate code deployment from feature releases. Developers define flags as strongly-typed classes, product owners configure release timing and targeting through a management interface.
 
-[Propel Feature Flags](https://github.com/Treiben/propel-feature-flags-csharp) • [Propel Dashboard](https://github.com/Treiben/Propel.FeatureFlags.Dashboard) • [Propel CLI](https://github.com/Treiben/propel-cli)
+[Propel Feature Flags](https://github.com/Treiben/propel-feature-flags-csharp) • [Propel Dashboard](https://github.com/Treiben/propel-dashboard) • [Propel CLI](https://github.com/Treiben/propel-cli)
 
 ---
 
@@ -29,7 +29,7 @@ Feature flag library with PostgreSQL and SQL Server persistence, Redis caching, 
 
 **Status:** v1.0.0-beta.1 - Available on NuGet
 
-### [Propel Dashboard](https://github.com/Treiben/Propel.FeatureFlags.Dashboard)
+### [Propel Dashboard](https://github.com/Treiben/propel-dashboard)
 Management interface for feature flags *(in development)*
 
 Web application for configuring flag behavior - schedules, targeting rules, rollout percentages - and monitoring flag usage across applications.
