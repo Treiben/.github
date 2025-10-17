@@ -1,8 +1,8 @@
-# Treiben
+# Propel
 
 **Type-safe feature flags**
 
-Treiben provides feature flag libraries that separate code deployment from feature releases. Developers define flags as strongly-typed classes, product owners configure release timing and targeting through a management interface.
+Propel provides feature flag libraries that separate code deployment from feature releases. Developers define flags as strongly-typed classes, product owners configure release timing and targeting through a management interface.
 
 [Propel Feature Flags](https://github.com/Treiben/propel-feature-flags-csharp) • [Propel Dashboard](https://github.com/Treiben/propel-dashboard) • [Propel CLI](https://github.com/Treiben/propel-cli)
 
@@ -10,7 +10,7 @@ Treiben provides feature flag libraries that separate code deployment from featu
 
 ## Overview
 
-Treiben (German: to propel, to drive) is a feature flag system designed around two core principles:
+Propel is a feature flag system designed around two core principles:
 
 **Type safety**: Feature flags are defined as classes in code, not strings in configuration files. This provides compile-time validation, IDE support for navigation and refactoring, and explicit visibility into what flags exist and where they're used.
 
