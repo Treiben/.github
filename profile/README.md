@@ -56,9 +56,6 @@ Database migrations and limited management interface for feature flags
 - **Treiben** (German) - Organization name. To propel, to drive forward.
 - **Propel** - Product name and code namespace.
 - **Knara** (Armenian) - Sister libraries focused on compile-time safety.
-
-The sailboat icon represents controlled momentum - like wind propelling a sailboat, feature flags drive features forward with precision and control.
-
 ---
 
 ## Related Projects
