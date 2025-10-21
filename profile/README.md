@@ -23,17 +23,17 @@ Core library for .NET applications (.NET Standard 2.0+, .NET Framework 4.6.1+, .
 
 Feature flag library with PostgreSQL and SQL Server persistence, Redis caching, and support for scheduled releases, time windows, user/tenant targeting, percentage rollouts, and custom targeting rules.
 
-**Status:** v1.0.0-beta.1 - Available on NuGet
+**Status:** v2.2.1 - Available on NuGet
 
 ### [Propel Dashboard](https://github.com/Treiben/propel-dashboard)
-Management interface for feature flags *(in development)*
+Management interface for feature flags - Avaliable on DockerHub
 
 Web application for configuring flag behavior - schedules, targeting rules, rollout percentages - and monitoring flag usage across applications.
 
 ### [Propel CLI](https://github.com/Treiben/propel-cli)
 Database migrations and limited management interface for feature flags
 
-**Status:** v1.1.1-beta.1 - Available on NuGet
+**Status:** v1.1.2-beta.1.2 - Available on NuGet
 
 ---
 
